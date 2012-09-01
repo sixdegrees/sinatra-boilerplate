@@ -8,10 +8,10 @@ gem 'dalli', require: 'rack/session/dalli'
 gem 'kgio'
 
 # server
-gem 'unicorn'
+# gem 'unicorn'
 
 # development
-gem 'foreman'
+# gem 'foreman'
 
 # rack
 gem 'rack'
