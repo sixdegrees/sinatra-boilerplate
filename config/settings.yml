@@ -1,0 +1,11 @@
+defaults: &defaults
+  dalli: false
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
