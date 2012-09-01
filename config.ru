@@ -8,15 +8,18 @@ Bundler.require(:default)
 end
 
 # = Middleware =
-use Rack::Session::Dalli,             # session via memcached that sets a cookie reference
-  :expire_after => 1800,              # 30 minutes
-  :key          => 'rack_session',    # cookie name (probably change this)
-  :secret       => 'change me', # Use `SecureRandom.hex(32)` to generate an unpredictable, 256bit randomly signed session cookies.
-  :httponly     => true,              # bad js! No cookies for you!
-  :compress     => true,
-  :secure       => false,             # NOTE: if you're storing user authentication information in session set this to true and provide pages via SSL instead of standard HTTP or, to quote nkp, "risk the firesheep!"
-  :path         => '/'
-
+if Settings.dalli
+  use Rack::Session::Dalli,             # session via memcached that sets a cookie reference
+    :expire_after => 1800,              # 30 minutes
+    :key          => 'rack_session',    # cookie name (probably change this)
+    :secret       => 'change me', # Use `SecureRandom.hex(32)` to generate an unpredictable, 256bit randomly signed session cookies.
+    :httponly     => true,              # bad js! No cookies for you!
+    :compress     => true,
+    :secure       => false,             # NOTE: if you're storing user authentication information in session set this to true and provide pages via SSL instead of standard HTTP or, to quote nkp, "risk the firesheep!"
+    :path         => '/'
+else
+  use Rack::Session::Cookie
+end
 # rack middleware
 use Rack::Deflect,            # prevents DOS attacks https://github.com/rack/rack-contrib/blob/master/lib/rack/contrib/deflect.rb
   :log => $stdout,            # should log appropriately
