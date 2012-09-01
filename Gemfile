@@ -4,8 +4,10 @@
 source :rubygems
 
 # session store
-gem 'dalli', require: 'rack/session/dalli'
+gem 'dalli', :require => 'rack/session/dalli'
 gem 'kgio'
+
+gem 'settingslogic'
 
 # server
 # gem 'unicorn'
@@ -15,12 +17,12 @@ gem 'kgio'
 
 # rack
 gem 'rack'
-gem 'rack-contrib', require: 'rack/contrib'
-gem 'rack-protection', require: 'rack/protection'
+gem 'rack-contrib', :require => 'rack/contrib'
+gem 'rack-protection', :require => 'rack/protection'
 
 # sinatra
 gem 'sinatra'
-gem 'sinatra-flash', require: 'sinatra/flash' # enables flash[:notice] && flash[:error]
+gem 'sinatra-flash', :require => 'sinatra/flash' # enables flash[:notice] && flash[:error]
 
 # faster better stronger
 gem 'erubis'

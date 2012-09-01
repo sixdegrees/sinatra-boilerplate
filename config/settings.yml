@@ -1,0 +1,18 @@
+defaults: &defaults
+  dalli: false
+  sprockets:
+    assets_prefix: '/assets'
+    assets_paths:
+      - stylesheets
+      - javascripts
+      - images
+      - fonts
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
