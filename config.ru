@@ -68,9 +68,10 @@ set :static,          false # your upstream server should deal with those (nginx
 
 # = map it out for me
 # sprockets
-map Sinatra::Application.settings.assets_prefix do
+map Settings.sprockets.assets_prefix do
   run Sinatra::Application.sprockets
 end
+
 # main app
 map '/' do
   run Sinatra::Application
