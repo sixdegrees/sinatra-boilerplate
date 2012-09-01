@@ -4,10 +4,9 @@ require 'bundler' # gem requires
 Bundler.require(:default)
 
 PROJECT_ROOT = File.expand_path(File.dirname(__FILE__))
-require './lib/settings'
 
 # core Ruby requires, modules and the main app file
-%w(securerandom timeout cgi date ./application/core).each do |requirement|
+%w(securerandom timeout cgi date ./application/core ./lib/settings).each do |requirement|
   require requirement
 end
 
