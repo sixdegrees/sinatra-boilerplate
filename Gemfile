@@ -7,6 +7,8 @@ source :rubygems
 gem 'dalli', :require => 'rack/session/dalli'
 gem 'kgio'
 
+gem 'settingslogic'
+
 # server
 # gem 'unicorn'
 
