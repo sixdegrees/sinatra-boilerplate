@@ -3,19 +3,25 @@ defaults: &defaults
   debug: false
   logging: true
   serve_static: false
+  google_analytics: UA-XXX-XXX
   notifications:
     sender: service@example.com
     recipients: 
       - you@example.com
       - me@example.com
       - him@example.com
+  compass:
+    images:   images
+    fonts:    fonts
   sprockets:
-    assets_prefix: '/assets'
-    assets_paths:
-      - stylesheets
-      - javascripts
-      - images
-      - fonts
+    digest:   true
+    assets_prefix: /assets
+    paths:
+      js:     javascripts
+      css:    stylesheets
+      static:
+        - images
+        - fonts
 
 development:
   <<: *defaults

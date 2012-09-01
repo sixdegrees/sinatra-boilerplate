@@ -1,5 +1,5 @@
 @import 'compass';
-@import 'susy';
+// @import "compass_twitter_bootstrap";
 
 @import 'partials/variables';
 @import 'partials/normalize';
@@ -7,7 +7,7 @@
 @import 'partials/base';
 @import "partials/layout";
 
-/* Drop your styles in here! */
+
 header {
   h1 {
     @include text-shadow(#ccc 1px 1px 3px);

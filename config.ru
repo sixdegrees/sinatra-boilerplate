@@ -3,6 +3,8 @@ require 'rubygems' if RUBY_VERSION < '1.9'
 require 'bundler' # gem requires
 Bundler.require(:default)
 
+require 'compass_twitter_bootstrap'
+
 PROJECT_ROOT = File.expand_path(File.dirname(__FILE__))
 
 # core Ruby requires, modules and the main app file

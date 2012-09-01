@@ -31,8 +31,12 @@ gem 'erubis'
 gem 'pony'
 
 # assets
-gem 'susy'
+gem 'compass'
+gem 'uglifier'
+gem 'oily_png'
+gem 'handlebars_assets'
 gem 'coffee-script'
+gem 'compass_twitter_bootstrap', :git => 'git://github.com/vwall/compass-twitter-bootstrap.git'
 
 # sprockets galore
 gem 'sprockets'
