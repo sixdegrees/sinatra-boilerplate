@@ -1,5 +1,8 @@
 defaults: &defaults
   dalli: false
+  debug: false
+  logging: true
+  serve_static: false
   sprockets:
     assets_prefix: '/assets'
     assets_paths:
@@ -10,6 +13,7 @@ defaults: &defaults
 
 development:
   <<: *defaults
+  debug: true
 
 test:
   <<: *defaults

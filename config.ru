@@ -38,11 +38,11 @@ use Rack::Protection::PathTraversal     # prevents path traversal
 # = Configuration =
 set :run,             false
 set :server,          %w(unicorn)
-set :show_exceptions, false
+set :show_exceptions, Settings.debug
 set :raise_errors,    development?
 set :views,           './application/views'
-set :logging,         true
-set :static,          false # your upstream server should deal with those (nginx, Apache)
+set :logging,         Settings.logging
+set :static,          Settings.serve_static # your upstream server should deal with those (nginx, Apache)
 
 #
 # . . . . . . . . . . . . . . . . _,,,--~~~~~~~~--,_
