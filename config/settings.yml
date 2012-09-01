@@ -3,6 +3,12 @@ defaults: &defaults
   debug: false
   logging: true
   serve_static: false
+  notifications:
+    sender: service@example.com
+    recipients: 
+      - you@example.com
+      - me@example.com
+      - him@example.com
   sprockets:
     assets_prefix: '/assets'
     assets_paths:
