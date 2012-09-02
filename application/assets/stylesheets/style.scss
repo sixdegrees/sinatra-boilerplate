@@ -1,12 +1,14 @@
 @import 'compass';
-// @import "compass_twitter_bootstrap";
+// @import 'compass_twitter_bootstrap';
 
 @import 'partials/variables';
 @import 'partials/normalize';
 @import 'partials/h5bp';
 @import 'partials/base';
-@import "partials/layout";
+@import 'partials/layout';
 
+@import 'socialmedia/*.png';
+@include all-socialmedia-sprites;
 
 header {
   h1 {
