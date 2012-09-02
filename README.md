@@ -1,3 +1,15 @@
+# Foreword : Sixdegrees's Additions
+* Migrated many things to Settings, using [Settingslogic](https://github.com/binarylogic/settingslogic)
+* Memcached made optional (using settings.yml)
+* Made sprockets configuration a bit more flexible (using settings.yml)
+* Added `lib` and `vendor` search paths for Sprockets. Add your extensions & libs, and reference them in vendor.css & vendor.js
+* Vendored bootstrap
+* Added crossdomain.xml & 404 static file
+* Migrated email notification sender & receiver in settings.yml
+* Examples for compass spriting, and webfonts inclusion
+
+
+
 # Sinatra Boilerplate
 
 A great place to start with [Sinatra](http://www.sinatrarb.com/), [HTML5 Boilerplate](http://html5boilerplate.com/), [Compass](http://compass-style.org/), [CoffeeScript](http://coffeescript.org/) and [Sprockets (aka the asset pipeline)](https://github.com/sstephenson/sprockets) all cooked together.
