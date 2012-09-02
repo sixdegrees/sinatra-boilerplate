@@ -4,11 +4,11 @@
 
 project_path         = Settings.sprockets['application_dir']
 
-images_dir           = "#{Settings.sprockets.assets_prefix}/#{Settings.compass.images}"
-sass_dir             = "#{Settings.sprockets.assets_prefix}/#{Settings.sprockets.paths.css}"
-css_dir              = "#{Settings.sprockets.assets_prefix}/#{Settings.sprockets.paths.css}"
-javascripts_dir      = "#{Settings.sprockets.assets_prefix}/#{Settings.sprockets.paths.js}"
-fonts_dir            = "#{Settings.sprockets.assets_prefix}/#{Settings.compass.fonts}"
+images_dir           = Settings.paths.images
+sass_dir             = Settings.paths.css
+css_dir              = Settings.paths.css
+javascripts_dir      = Settings.paths.js
+fonts_dir            = Settings.paths.fonts
 
 # You can select your preferred output style here (can be overridden via the command line):
 output_style = :compressed

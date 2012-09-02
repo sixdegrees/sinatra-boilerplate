@@ -10,18 +10,22 @@ defaults: &defaults
       - you@example.com
       - me@example.com
       - him@example.com
-  compass:
-    images:   images
-    fonts:    fonts
   sprockets:
     digest:   true
     assets_prefix: /assets
-    paths:
-      js:     javascripts
-      css:    stylesheets
-      static:
-        - images
-        - fonts
+    precompile: 
+      - app.js
+      - vendor.js
+      - vendor.css
+      - style.css
+  paths:
+    js:     javascripts
+    css:    stylesheets
+    images:   images
+    fonts:    fonts
+    static:
+      - images
+      - fonts
 
 development:
   <<: *defaults
