@@ -1,0 +1,8 @@
+#!/bin/bash
+export GA_CODE='UA-XXXXXX'
+export NOTIFICATIONS_SENDER='me@example.com'
+
+# Source hull environment variables
+if [[ -s .hullenv ]]; then 
+  source ./.hullenv
+fi

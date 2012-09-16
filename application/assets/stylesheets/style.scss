@@ -1,37 +1,17 @@
 @import 'compass';
-// @import 'compass_twitter_bootstrap';
 
 @import 'partials/fonts';
+@import 'partials/colors';
 @import 'partials/variables';
 @import 'partials/normalize';
 @import 'partials/h5bp';
 @import 'partials/base';
 @import 'partials/layout';
+@import 'partials/highlight';
 
+@import 'icons/*.png';
+@include all-icons-sprites;
+
+$socialmedia_spacing:50px;
 @import 'socialmedia/*.png';
 @include all-socialmedia-sprites;
-
-header {
-  h1 {
-    @include text-shadow(#ccc 1px 1px 3px);
-
-    font-weight: bold;
-    letter-spacing: -1px;
-    margin: 0.8em 0;
-  }
-}
-
-#sidebar {
-  color: #777;
-
-  img {
-    @include box-shadow(#ccc 1px 1px 3px);
-
-    background: #eee;
-    border: 1px solid #bbb;
-    display: block;
-    padding: 0.25em;
-    max-width: 97%;
-  }
-}
-

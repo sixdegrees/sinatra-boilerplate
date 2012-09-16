@@ -9,6 +9,9 @@ unless window.console and console.log
     console[methods[length]] = noop  while length--
   )()
 
+body = {}
+
 # woo jquery
 jQuery ($) ->
-  log "hey, the DOM is loaded!"
+  # cache body reference. Faster lookups
+  body = $('body')

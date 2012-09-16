@@ -1,8 +1,10 @@
 defaults: &defaults
+  livereload: true
   dalli: false
   debug: false
   logging: true
   serve_static: false
+  app_title: Your app title here
   google_analytics: UA-XXX-XXX
   notifications:
     sender: service@example.com
@@ -37,3 +39,11 @@ test:
 
 production:
   <<: *defaults
+  livereload: false
+  google_analytics: <%=ENV['GA_CODE']%>
+  notifications:
+    sender: <%=ENV['NOTIFICATIONS_SENDER']%>
+    recipients:
+      - you@example.com
+      - me@example.com
+      - him@example.com

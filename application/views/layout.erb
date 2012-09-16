@@ -3,61 +3,43 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="<%= image_path('favicon.ico') %>">
-    <title><%= @title %></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="<%= stylesheet_path('vendor') %>" media="all">
-    <link rel="stylesheet" href="<%= stylesheet_path('style') %>" media="all">
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="<%= image_path('favicon.ico') %>">
+  <title><%= @title %></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
 
-    <!-- More ideas for your <head> here: h5bp.com/docs/#head-Tips -->
-    <!--
-      Modernizr enables HTML5 elements & feature detects;
-      For optimal performance, use a custom Modernizr build: www.modernizr.com/download/
-      For Modernizr.load to work, check the box for it on the build page
-    -->
-    <script src="<%= javascript_path('modernizr') %>"></script>
-  </head>
-  <body>
-    <!--[if lt IE 7]>
-      <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-    <![endif]-->
-    <div class="container">
-      <header>
-        <h1>Hey There!</h1>
-      </header>
-    </div><!-- .container -->
-    <div class="container">
-      <div id="main" role="main">
-        <%= yield %>
+  <meta property="og:title" content="<%=@title%>" />
+  <meta property="og:type" content="company" />
+  <meta property="og:site_name" content="site_name" />
+  <meta property="og:url" content="http://site_url" />
+  <meta property="og:image" content="null" />
+  <meta property="og:description" content="<%=@description%>" />
+
+  <link rel="stylesheet" href="<%= stylesheet_path('vendor') %>" media="all">
+  <link rel="stylesheet" href="<%= stylesheet_path('style') %>" media="all">
+
+  <script src="<%= javascript_path('modernizr') %>"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar">
+  <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+  <![endif]-->
+
+  <%=yield%>
+
+  <footer class='container'>
+    <div class='row'>
+      <div class='span12'>
+        Footer.
       </div>
-      <aside id="sidebar">
-        <img src='<%= image_path('llama.jpeg') %>'>
-        <p>The Llama sees all.</p>
-      </aside>
-    </div><!-- .container -->
-    <div class="container">
-      <footer>
-        &copy; 2012 oh you know :)
-      </footer>
-    </div> <!-- .container -->
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script src="<%= javascript_path('vendor') %>"></script>
-    <script src="<%= javascript_path('app') %>"></script>
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      // Twitter widgets
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='http://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');
-
-      // Google Analytics
-      var _gaq=[['_setAccount','<?=Settings.google_analytics%>'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
-  </body>
+    </div>
+  </footer>
+  <script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js'></script>
+  <script src='<%= javascript_path('vendor') %>'></script>
+  <script src='<%= javascript_path('app') %>'></script>
+  <style type="text/css">
+  </style>
+</body>
 </html>

@@ -1,7 +1,7 @@
-
-Gemfile.lock
-node_modules
+.DS_Store
+.rvmrc
 .sass-cache
+node_modules
 unicorn.pid
 public/assets/*
-.DS_Store
+tmp/*

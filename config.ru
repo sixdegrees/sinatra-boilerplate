@@ -1,11 +1,13 @@
 # = bundle that shit
 require 'rubygems' if RUBY_VERSION < '1.9'
 require 'bundler' # gem requires
-Bundler.require(:default)
+Bundler.require
 
 require 'compass_twitter_bootstrap'
 
 PROJECT_ROOT = File.expand_path(File.dirname(__FILE__))
+
+RubyPython.configure :python_exe => 'python2.6'
 
 # core Ruby requires, modules and the main app file
 %w(securerandom timeout cgi date ./application/settings ./application/core).each do |requirement|
@@ -36,15 +38,18 @@ use Rack::Protection::SessionHijacking  # records a few pieces of browser info a
 use Rack::Protection::IPSpoofing        # checks & protects against forwarded-for madness
 use Rack::Protection::PathTraversal     # prevents path traversal
 
+if Settings.livereload
+  use Rack::LiveReload
+end
+
 # = Configuration =
 set :run,             false
 set :server,          %w(unicorn)
-set :show_exceptions, Settings.debug
-set :raise_errors,    development?
 set :views,           './application/views'
-set :logging,         Settings.logging
+set :show_exceptions, Settings.debug
+set :raise_errors,    Settings.debug
+set :logging,         true
 set :static,          Settings.serve_static # your upstream server should deal with those (nginx, Apache)
-
 #
 # . . . . . . . . . . . . . . . . _,,,--~~~~~~~~--,_
 # . . . . . . . . . . . . . . ,-' : : : :::: :::: :: : : : : :º '-, ITS A TRAP!

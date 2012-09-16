@@ -9,8 +9,12 @@ gem 'kgio'
 
 gem 'settingslogic'
 
+gem 'rake'
+
+gem 'hull'
+
 # server
-# gem 'unicorn'
+gem 'unicorn'
 
 # development
 # gem 'foreman'
@@ -30,15 +34,23 @@ gem 'erubis'
 # email
 gem 'pony'
 
-# assets
+
+gem 'growl'
+gem 'rb-fsevent'
+gem 'rack-livereload'
+gem 'guard' , '~> 1.3.1'
+gem 'guard-livereload'
+
+
 gem 'compass'
 gem 'uglifier'
 gem 'oily_png'
 gem 'handlebars_assets'
 gem 'coffee-script'
-gem 'compass_twitter_bootstrap', :git => 'git://github.com/vwall/compass-twitter-bootstrap.git'
 
 # sprockets galore
 gem 'sprockets'
 gem 'sprockets-sass'
 gem 'sprockets-helpers'
+gem 'rubypython', '0.5.1'
+gem 'pygments.rb', '0.1.3'

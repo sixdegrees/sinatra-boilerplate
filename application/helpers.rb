@@ -7,6 +7,20 @@ helpers do
   alias_method :e, :escape
   
   
+  def highlight file, opts={}
+    f = File.read("./application/#{file}")
+    e = File.extname(file).gsub('.','')
+    lexer = case e
+      when 'coffee' then 'coffeescript'
+      when 'html'  then 'html'
+      when 'hbs'   then 'text'
+      else e
+    end
+    o = {:lexer=>lexer}.merge(opts)
+    c = Pygments.highlight(f, o)
+    "<div class='code'>#{c}</div>"
+  end
+
   # overrides Sinatra's defaults to allow calling like this:
   #   erb 'partials/flash'
   # 
@@ -19,6 +33,7 @@ helpers do
   # which is just weird and ugly.
   # 
   # also, defaults to not use a layout file when the request is made of XHR
+
   def erb(template, options = {}, locals = {})
     template = template.to_sym
     options[:layout] = (options[:layout].present? || options[:layout] == false) ? options[:layout] : !request.xhr?
