@@ -1,4 +1,3 @@
-
 # Avoid `console` errors in browsers that lack a console.
 unless window.console and console.log
   (->

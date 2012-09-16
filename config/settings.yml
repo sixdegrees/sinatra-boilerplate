@@ -22,6 +22,7 @@ defaults: &defaults
     js:     javascripts
     css:    stylesheets
     images:   images
+    templates:   templates
     fonts:    stylesheets/fonts
     static:
       - images

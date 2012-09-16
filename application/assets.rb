@@ -1,4 +1,5 @@
 require 'uglifier'
+require 'handlebars_assets'
 
 # sprockets setup
 set :sprockets,       Sprockets::Environment.new
@@ -6,10 +7,11 @@ Settings.sprockets['root']       = File.expand_path('../', __FILE__)
 Settings.paths['assets'] = Settings.paths.static
 Settings.paths['assets'].push Settings.paths.js
 Settings.paths['assets'].push Settings.paths.css
+Settings.paths['assets'].push Settings.paths.templates
 Settings.paths['assets'].push Settings.paths.images
 Settings.paths['assets'].push Settings.paths.fonts
 
-# Sprockets.register_engine '.hbs', HandlebarsAssets::TiltHandlebars
+Sprockets.register_engine '.hbs', HandlebarsAssets::TiltHandlebars
 
 searchpaths = []
 %w{ application vendor lib}.each do |dir|
@@ -29,6 +31,7 @@ configure do
       settings.sprockets.append_path File.join(sp, path)
     end
   end
+  settings.sprockets.append_path HandlebarsAssets.path
 
   # configure Compass so it can find images
   Compass.add_project_configuration File.expand_path('compass.rb', File.dirname(__FILE__))
